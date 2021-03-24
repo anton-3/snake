@@ -93,7 +93,7 @@ function updateSnakeLocation() {
 
 function updateScoreboard() {
   scoreElement.textContent = score.toString();
-  if (score > highScoreElement.textContent.parseInt()) {
+  if (score > parseInt(highScoreElement.textContent)) {
     highScoreElement.textContent = score.toString();
   }
 }
