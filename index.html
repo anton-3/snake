@@ -32,6 +32,25 @@
         font-family: Arial, Helvetica, sans-serif;
       }
 
+      #alert-box {
+        position: absolute;
+        width: 15em;
+        height: 8em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: black;
+      }
+
+      #alert-box p {
+        color: white;
+        text-align: center;
+      }
+
+      #buttons {
+        text-align: center;
+      }
+
       .empty {
         background-color: transparent;
       }
@@ -39,14 +58,30 @@
       .snake-head,
       .snake-body {
         background-color: yellow;
+        box-shadow: 0 0 0 1px black inset;
       }
 
       .apple {
         background-color: red;
+        box-shadow: 0 0 0 1px black inset;
+      }
+
+      .dead-snake-head {
+        background-color: rgb(170, 170, 170);
+        box-shadow: 0 0 0 1px black inset;
       }
     </style>
   </head>
-  <body>
+  <body ontouchstart="eval(document.querySelector('#run-js').value)">
+    <div id="alert-box">
+      <p class="alert-title">Javascript Snake</p>
+      <p class="alert-description">Use arrow keys or WASD to play</p>
+      <div id="buttons">
+        <button onclick="playSnake(100)">Slow</button>
+        <button onclick="playSnake()">Medium</button>
+        <button onclick="playSnake(25)">Fast</button>
+      </div>
+    </div>
     <div id="header">
       <img id="play-pause" src="img/pause.png" onclick="playOrPause()" />
       <p id="score-p">
@@ -55,9 +90,5 @@
       </p>
     </div>
     <script type="text/javascript" src="snake.js"></script>
-    <script type="text/javascript">
-      // can pass gamespeed, height, and width
-      playSnake();
-    </script>
   </body>
 </html>
