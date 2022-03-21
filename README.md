@@ -1,4 +1,4 @@
 # snake
 snake in javascript
 
-live version [here](https://anton-a-a.github.io/snake/)
+live version [here](https://anton-3.github.io/snake/)
